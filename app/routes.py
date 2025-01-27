@@ -13,7 +13,7 @@ def index():
         cursor = conn.cursor()
 
         # Example query
-        cursor.execute("SELECT * from dummyData")
+        cursor.execute("DELETE dummyData")
         result = cursor.fetchall()
 
         # If there are results, process them into a list of dictionaries
