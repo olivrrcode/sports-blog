@@ -10,7 +10,7 @@
 6. Run the command "git clone _" where the _ is the https link you copied
 7. Then either locate the file and open it or use the commands "cd sports-blog" and then "code ."
 8. Once in the VSCode, click the terminal button and create a new terminal. You can then run the following command "python -m venv venv"
-9. Then run the command, "venv/bin/activate" on Windows or "source venv/bin/activate" on Mac
+9. Then run the command, "venv/scripts/activate" on Windows or "source venv/bin/activate" on Mac
 10. Then run the command "pip install -r requirements.txt" or "pip3 install -r requirements.txt" depending on the version of pip you have. If this doesn't work then install python from [this link](https://www.python.org/downloads/)
 11. Create a file in the root folder called .env and copy and paste the message in the environment variables discord channel.
 12. Run "python app.py" or "python3 app.py" to run the application.
