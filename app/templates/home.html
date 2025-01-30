@@ -1,0 +1,144 @@
+{% extends 'base.html' %} {% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
+  <a class="navbar-brand fw-bold" href="#">Logo</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNav"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item"><a class="nav-link" href="#">Latest News</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Trending Topics</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          >Featured Articles</a
+        >
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Article 1</a></li>
+          <li><a class="dropdown-item" href="#">Article 2</a></li>
+        </ul>
+      </li>
+    </ul>
+    <a href="#" class="btn btn-dark">Join</a>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main>
+  <!-- Hero Section -->
+  <div class="container hero-section text-center text-md-start py-5">
+    <div class="col-md-6">
+      <h1 class="fw-bold">Stay Ahead with the Latest Sports News</h1>
+      <p>
+        Discover trending stories and featured articles that keep you in the
+        loop.
+      </p>
+      <a href="#" class="btn btn-dark">Learn More</a>
+    </div>
+    <div class="col-md-6 text-center">
+      <div class="image-placeholder bg-light p-5">
+        <img src="http://picsum.photos/800/400" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="container features-section text-center py-5">
+    <h2 class="fw-bold">
+      Explore Our Comprehensive Player Profiles, Live Scores, and Upcoming
+      Events
+    </h2>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <h5>Stay Updated with Real-Time Scores</h5>
+        <p>Navigate through extensive player stats and schedules.</p>
+        <a href="#">Explore &gt;</a>
+      </div>
+      <div class="col-md-4">
+        <h5>Get Instant Access to Live Scores</h5>
+        <p>Follow your favorite teams and never miss a moment.</p>
+        <a href="#">Scores &gt;</a>
+      </div>
+      <div class="col-md-4">
+        <h5>Discover Upcoming Events</h5>
+        <p>Plan your schedule around key matches.</p>
+        <a href="#">Events &gt;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Highlights Section -->
+  <div class="container highlights-section text-center py-5">
+    <h2 class="fw-bold">Catch Up on the Latest Match Highlights</h2>
+    <p>Stay updated with the most exciting moments from recent matches.</p>
+    <ul class="list-unstyled">
+      <li>⚽ Watch the thrilling goals and key plays.</li>
+      <li>🏆 Exclusive insights from top athletes and coaches.</li>
+      <li>🎉 Don’t miss out on the latest sports excitement!</li>
+    </ul>
+    <a href="#" class="btn btn-dark">Learn More</a>
+  </div>
+
+  <!-- Blog Section -->
+  <div class="container blog-section text-center py-5">
+    <h2 class="fw-bold">Latest Sports Insights</h2>
+    <div class="row mt-4">
+      <div class="col-md-4 card p-3">
+        <h5>Top Players to Watch This Season</h5>
+        <p>An analysis of standout players in the league.</p>
+      </div>
+      <div class="col-md-4 card p-3">
+        <h5>The Rise of Young Talent</h5>
+        <p>Exploring the impact of youth players.</p>
+      </div>
+      <div class="col-md-4 card p-3">
+        <h5>Grand Slam Highlights of the Year</h5>
+        <p>A recap of thrilling Grand Slam moments.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Debates Section -->
+  <div class="container debates-section text-center py-5">
+    <h2 class="fw-bold">Engage in the Hottest Sports Discussions</h2>
+    <p>Dive into the most pressing issues in sports today.</p>
+    <div class="row mt-4">
+      <div class="col-md-6 text-center">
+        <div class="image-placeholder bg-light p-5">
+          <img src="http://picsum.photos/800/400" alt="" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h5>Current Debates</h5>
+        <p>Join the conversation on today’s hottest topics.</p>
+        <a href="#">Discuss &gt;</a>
+        <h5>Fan Opinions</h5>
+        <p>Read what fans are saying about recent controversies.</p>
+        <a href="#">Vote &gt;</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4">
+  <p>&copy; 2025 Sports Blog. All rights reserved.</p>
+  <p>
+    <a href="#" class="text-white">Privacy Policy</a> |
+    <a href="#" class="text-white">Terms of Service</a>
+  </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

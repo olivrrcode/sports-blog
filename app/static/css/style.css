@@ -1,0 +1,151 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-link {
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 60px 0;
+  width: 100%;
+}
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-right: 20px;
+}
+.image-placeholder {
+  width: 100%;
+  max-width: 100%;
+  height: 20rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ddd;
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+.image-placeholder img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Features Section */
+.features-section {
+  text-align: center;
+  padding: 50px 0;
+}
+.features-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.features-section .row div {
+  padding: 20px;
+}
+
+.features-section a {
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+}
+.features-section a:hover {
+  text-decoration: underline;
+}
+
+/* Highlights Section */
+.highlights-section {
+  text-align: left;
+  padding: 50px 0;
+}
+.highlights-section ul {
+  list-style: none;
+  padding: 0;
+}
+.highlights-section ul li {
+  padding: 5px 0;
+}
+
+/* Blog Section */
+.blog-section {
+  text-align: center;
+  padding: 50px 0;
+}
+.blog-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  border: none;
+  background: white;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* News Section */
+.news-section {
+  text-align: left;
+  padding: 50px 0;
+}
+
+/* Debates Section */
+.debates-section {
+  text-align: left;
+  padding: 50px 0;
+}
+.debates-section .row {
+  display: flex;
+  align-items: center;
+}
+.debates-section .image-placeholder {
+  width: 100%;
+  height: 300px;
+  background: #ddd;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  background: #343a40;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+footer a:hover {
+  text-decoration: underline;
+}
