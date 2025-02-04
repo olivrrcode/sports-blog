@@ -1,15 +1,15 @@
 from flask import Blueprint, render_template, request
 
 
-app = Blueprint('app',  __name__, template_folder='templates')
+main = Blueprint('main',  __name__, template_folder='templates')
 
 #frontend routes
-@app.route('/')
+@main.route('/')
 def index():
     return render_template("home.html")
 
 #backend routes
-@app.route('/api/register', methods=['POST'])
+@main.route('/api/register', methods=['POST'])
 def register():
     session.clear()
     if request.method == 'POST':
@@ -33,7 +33,7 @@ def register():
         return render_template("home.html", user={} ,success="You have successfully registered"), 201
     
     
-@app.route('/api/login', methods=['POST'])
+@main.route('/api/login', methods=['POST'])
 def register():
     session.clear()
     if request.method == 'POST':
