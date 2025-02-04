@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, session
 
 
 main = Blueprint('main',  __name__, template_folder='templates')
@@ -34,7 +34,7 @@ def register():
     
     
 @main.route('/api/login', methods=['POST'])
-def register():
+def login():
     session.clear()
     if request.method == 'POST':
         username = request.form.get('username')

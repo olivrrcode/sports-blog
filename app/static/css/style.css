@@ -83,6 +83,12 @@ html {
   padding: 20px;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .features-section a {
   font-weight: bold;
   color: #007bff;
