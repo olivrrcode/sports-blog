@@ -1,6 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
-  <a class="navbar-brand fw-bold" href="#">Logo</a>
+  <a class="navbar-brand fw-bold" href="#"
+    ><img
+      class="logo-img"
+      src="{{ url_for('static', filename='img/Team Project Logo.svg') }}"
+  /></a>
   <button
     class="navbar-toggler"
     type="button"
@@ -116,7 +120,7 @@
     <div class="row mt-4">
       <div class="col-md-6 text-center">
         <div class="image-placeholder bg-light p-5">
-          <img src="http://picsum.photos/800/400" alt="" />
+          <img src="http://picsum.photos/900/400" alt="" />
         </div>
       </div>
       <div class="col-md-6">
