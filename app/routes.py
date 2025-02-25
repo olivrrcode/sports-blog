@@ -9,27 +9,6 @@ main = Blueprint('main',  __name__, template_folder='templates')
 def index():
     return render_template("home.html")
 
-@main.route('/createTable', methods=['GET'])
-def createTable():
-    try:
-        cur = mysql.connection.cursor()
-        cur.execute('''CREATE TABLE IF NOT EXISTS users (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            firstname VARCHAR(100) NOT NULL,
-            lastname VARCHAR(100) NOT NULL,
-            username VARCHAR(100) NOT NULL,
-            email VARCHAR(100) NOT NULL,
-            password VARCHAR(255) NOT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            UNIQUE KEY unique_email (email),
-            UNIQUE KEY unique_username (username)
-        )''')
-        mysql.connection.commit()
-        cur.close()
-        return "Table created successfully"
-    except Exception as e:
-        return f"Error creating table: {str(e)}", 500
-
 #backend routes
 @main.route('/api/register', methods=['POST'])
 def register():
@@ -126,4 +105,3 @@ def login():
         finally:
             cur.close()
 
-            
