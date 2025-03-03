@@ -2,9 +2,11 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for
 )
 from werkzeug.exceptions import abort
+from markdown import markdown
 
 from sports_blog.auth import login_required
 from sports_blog.db import get_db
+
 
 bp = Blueprint('blog', __name__)
 
@@ -16,7 +18,14 @@ def index():
         ' FROM post p JOIN user u ON p.author_id = u.id'
         ' ORDER BY created DESC'
     ).fetchall()
-    return render_template('blog/index.html', posts=posts)
+
+    new_posts = []
+    for post in posts:
+        post = dict(post)
+        post["body"] = markdown(post["body"])
+
+        new_posts.append(post)
+    return render_template('blog/index.html', posts=new_posts)
 
 @bp.route('/create', methods=['GET', 'POST'])
 @login_required
