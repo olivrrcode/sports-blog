@@ -437,6 +437,28 @@ input.danger:hover {
   margin-bottom: 1rem;
 }
 
+/* Form sections */
+.form-section {
+  margin: 2.5em 0;
+  padding: 1.5em;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.form-section h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.danger-section {
+  background: #fff5f5;
+  border: 1px solid #fee2e2;
+}
+
+.form-section form {
+  margin: 1em 0 0 0;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   nav {

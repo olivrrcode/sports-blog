@@ -1,4 +1,4 @@
 .venv
 .DS_Store
-instance/
+instance
 sports_blog/__pycache__

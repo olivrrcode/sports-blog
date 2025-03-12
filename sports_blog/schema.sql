@@ -30,3 +30,4 @@ INSERT INTO category (name) VALUES
   ('Hockey'),
   ('Tennis'),
   ('Other');
+
