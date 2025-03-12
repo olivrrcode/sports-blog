@@ -23,4 +23,16 @@ pip install -r requirements.txt
 python run.py
 ```
 
+if this doesn't work on Windows, try
+
+```bash
+python3 run.py
+```
+
+or
+
+```bash
+py run.py
+```
+
 4. App should be available at http://127.0.0.1:5000
