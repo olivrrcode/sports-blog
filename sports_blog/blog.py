@@ -14,8 +14,9 @@ bp = Blueprint('blog', __name__)
 def index():
     db = get_db()
     posts = db.execute(
-        'SELECT p.id, title, body, created, author_id, username'
+        'SELECT p.id, title, body, created, author_id, username, c.id AS category_id, c.name AS category_name'
         ' FROM post p JOIN user u ON p.author_id = u.id'
+        ' LEFT JOIN category c ON p.category_id = c.id'
         ' ORDER BY created DESC'
     ).fetchall()
 
@@ -30,27 +31,34 @@ def index():
 @bp.route('/create', methods=['GET', 'POST'])
 @login_required
 def create():
+    db = get_db()
+    categories = db.execute('SELECT id, name FROM category ORDER BY name').fetchall()
+    
     if request.method == 'POST':
         title = request.form['title']
         body = request.form['body']
+        category_id = request.form['category_id']
         error = None
 
         if not title:
             error = 'Title is required.'
+        elif not body:
+            error = 'Content is required.'
+        elif not category_id:
+            error = 'Category is required.'
 
         if error is not None:
             flash(error)
         else:
-            db = get_db()
             db.execute(
-                'INSERT INTO post (title, body, author_id)'
-                ' VALUES (?, ?, ?)',
-                (title, body, g.user['id'])
+                'INSERT INTO post (title, body, author_id, category_id)'
+                ' VALUES (?, ?, ?, ?)',
+                (title, body, g.user['id'], category_id)
             )
             db.commit()
             return redirect(url_for('blog.index'))
 
-    return render_template('blog/create.html')
+    return render_template('blog/create.html', categories=categories)
 
 def get_post(id, check_author=True):
     post = get_db().execute(

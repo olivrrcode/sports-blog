@@ -1,24 +1,45 @@
 {% extends 'base.html' %} {% block header %}
 <h1>{% block title %}Posts{% endblock %}</h1>
 {% if g.user %}
-<a class="action" href="{{ url_for('blog.create') }}">New</a>
-{% endif %} {% endblock %} {% block content %} {% for post in posts %}
-<article class="post">
-  <header>
-    <div>
-      <h1>{{ post['title'] }}</h1>
-      <div class="about">
-        by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}
+<a class="action" href="{{ url_for('blog.create') }}"><i class="fas fa-plus"></i> New Post</a>
+{% endif %} {% endblock %} {% block content %}
+
+<div class="posts-container">
+  {% if posts %} {% for post in posts %}
+  <article class="post">
+    <header>
+      <div>
+        <h1>{{ post['title'] }}</h1>
+        <div class="about">
+          <i class="fas fa-user"></i> {{ post['username'] }}
+          <i class="fas fa-folder ml-2"></i> {{ post['category_name'] }}
+          <i class="fas fa-calendar ml-2"></i> {{
+          post['created'].strftime('%Y-%m-%d') }}
+        </div>
       </div>
-    </div>
-    {% if g.user['id'] == post['author_id'] %}
-    <a class="action" href="{{ url_for('blog.update', id=post['id']) }}"
-      >Edit</a
-    >
+      {% if g.user['id'] == post['author_id'] %}
+      <a class="action" href="{{ url_for('blog.update', id=post['id']) }}">
+        <i class="fas fa-edit"></i> Edit
+      </a>
+      {% endif %}
+    </header>
+    <div class="body">{{ post['body'] | safe }}</div>
+  </article>
+  {% if not loop.last %}
+  <hr />
+  {% endif %} {% endfor %} {% else %}
+  <div class="empty-state">
+    <i class="fas fa-newspaper fa-3x"></i>
+    <h2>No posts yet</h2>
+    <p>Be the first to share your sports insights!</p>
+    {% if g.user %}
+    <a class="action mt-3" href="{{ url_for('blog.create') }}">Create a post</a>
+    {% else %}
+    <p>
+      Please <a href="{{ url_for('auth.login') }}">log in</a> to create a post.
+    </p>
     {% endif %}
-  </header>
-  <p class="body">{{ post['body'] | safe }}</p>
-</article>
-{% if not loop.last %}
-<hr />
-{% endif %} {% endfor %} {% endblock %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
