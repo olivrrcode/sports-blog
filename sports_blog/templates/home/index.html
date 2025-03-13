@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Blog - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Sports Blog</h1>
+            <ul>
+                <li><a href="{{ url_for('home.index') }}">Home</a></li>
+                <li><a href="{{ url_for('blog.index') }}">Posts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <h2>Welcome to Sports Blog</h2>
+            <p>Your source for the latest sports news and analysis.</p>
+            <a href="{{ url_for('blog.index') }}" class="cta-button">Read Our Posts</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sports Blog. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

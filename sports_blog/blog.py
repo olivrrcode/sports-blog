@@ -9,7 +9,7 @@ from sports_blog.auth import login_required
 from sports_blog.db import get_db
 
 
-bp = Blueprint('blog', __name__)
+bp = Blueprint('blog', __name__, url_prefix='/blog')
 
 @bp.route('/')
 def index():
