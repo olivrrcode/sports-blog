@@ -14,20 +14,35 @@ bp = Blueprint('blog', __name__, url_prefix='/blog')
 @bp.route('/')
 def index():
     db = get_db()
-    posts = db.execute(
-        'SELECT p.id, title, body, created, author_id, username, c.id AS category_id, c.name AS category_name'
-        ' FROM post p JOIN user u ON p.author_id = u.id'
-        ' LEFT JOIN category c ON p.category_id = c.id'
-        ' ORDER BY created DESC'
-    ).fetchall()
+    category_id = request.args.get('category', type=int)
+    
+    # Get all categories for the dropdown
+    categories = db.execute('SELECT id, name FROM category ORDER BY name').fetchall()
+    
+    # Base query
+    query = '''SELECT p.id, title, body, created, author_id, username, c.id AS category_id, c.name AS category_name
+               FROM post p JOIN user u ON p.author_id = u.id
+               LEFT JOIN category c ON p.category_id = c.id'''
+    
+    # Add category filter if selected
+    params = []
+    if category_id:
+        query += ' WHERE c.id = ?'
+        params.append(category_id)
+    
+    query += ' ORDER BY created DESC'
+    posts = db.execute(query, params).fetchall()
 
     new_posts = []
     for post in posts:
         post = dict(post)
         post["body"] = markdown(post["body"])
-
         new_posts.append(post)
-    return render_template('blog/index.html', posts=new_posts)
+        
+    return render_template('blog/index.html', 
+                         posts=new_posts, 
+                         categories=categories, 
+                         selected_category=category_id)
 
 @bp.route('/create', methods=['GET', 'POST'])
 @login_required

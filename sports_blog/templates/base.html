@@ -11,10 +11,12 @@
 
 <body>
   <nav>
-    <h1><i class="fas fa-running"></i> Sports Blog</h1>
+    <h1><a href="{{ url_for('home.index') }}" style="text-decoration: none; color: #fff;"><i class="fas fa-running"></i>
+        Sports
+        Blog</a></h1>
     <ul>
       <li>
-        <a href="{{ url_for('blog.index') }}"><i class="fas fa-home"></i> Home</a>
+        <a href="{{ url_for('blog.index') }}"><i class="fas fa-home"></i>Posts</a>
       </li>
       {% if g.user %}
       <li>
@@ -31,7 +33,7 @@
         <a href="{{ url_for('auth.login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
       </li>
       {% endif %}
-    </ul>
+      </ul#>
   </nav>
 
   <section class="content">
