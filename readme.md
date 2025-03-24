@@ -36,3 +36,6 @@ py run.py
 ```
 
 4. App should be available at http://127.0.0.1:5000
+
+### 3. Run "flask --app sports_blog run"
+
