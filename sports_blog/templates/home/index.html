@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="content">
+    <section class="welcome-section">
+        <i class="fas fa-basketball-ball fa-4x"></i>
+        <h1>Welcome to Sports Blog</h1>
+        <p>Your source for the latest sports news and analysis.</p>
+        <a href="{{ url_for('blog.index') }}" class="action">
+            <i class="fas fa-newspaper"></i>
+            <span>Read Our Posts</span>
+        </a>
+    </section>
+</div>
+
+{% endblock %}

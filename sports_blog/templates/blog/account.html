@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Account Settings{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="form-section">
+    <h2>Change Username</h2>
+    <form method="post">
+        <input type="hidden" name="action" value="update_username">
+        <label for="username">New Username</label>
+        <input name="username" id="username" value="{{ g.user['username'] }}" required>
+        <input type="submit" value="Update Username">
+    </form>
+</div>
+
+<div class="form-section">
+    <h2>Change Password</h2>
+    <form method="post">
+        <input type="hidden" name="action" value="update_password">
+        <label for="current_password">Current Password</label>
+        <input type="password" name="current_password" id="current_password" required>
+        <label for="new_password">New Password</label>
+        <input type="password" name="new_password" id="new_password" required>
+        <input type="submit" value="Update Password">
+    </form>
+</div>
+
+<div class="form-section danger-section">
+    <h2>Delete Account</h2>
+    <form method="post" onsubmit="return confirm('Are you sure? This cannot be undone!');">
+        <input type="hidden" name="action" value="delete">
+        <label for="password">Confirm Password</label>
+        <input type="password" name="password" id="password" required>
+        <input type="submit" value="Delete Account" class="danger">
+    </form>
+</div>
+{% endblock %}
