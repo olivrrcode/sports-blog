@@ -4,8 +4,7 @@ import tempfile
 import pytest
 
 from sports_blog import create_app
-from sports_blog.db import get_db
-from sports_blog.db import init_db
+from sports_blog.db import get_db, init_db
 
 # read in SQL for populating test data
 with open(os.path.join(os.path.dirname(__file__), "data.sql"), "rb") as f:

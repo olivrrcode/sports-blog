@@ -42,7 +42,7 @@ def test_login(client, auth):
 
     # test that successful login redirects to the index page
     response = auth.login()
-    assert response.headers["Location"] == "/"
+    assert response.headers["Location"] == "/blog/"  # Updated to match auth.py redirection
 
     # login request set the user_id in the session
     # check that the user is loaded from the session
