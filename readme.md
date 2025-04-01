@@ -29,12 +29,15 @@ if this doesn't work on Windows, try
 python3 run.py
 ```
 
-or
+3. Run the following command
+```bash
+flask --app sports_blog run"
+```
+
+if this doesn't work, try
 
 ```bash
 py run.py
 ```
 
-3. Run "flask --app sports_blog run"
-
-4. App should be available at http://127.0.0.1:5000
+5. Load up a browser and navigate to http://127.0.0.1:5000
