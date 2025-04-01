@@ -1,3 +1,8 @@
 .venv
 .DS_Store
-sports_blog/__pycache__
+__pycache__/
+*.py[cod]
+*$py.class
+sports_blog/__pycache__/
+tests/__pycache__/
+.pytest_cache/
